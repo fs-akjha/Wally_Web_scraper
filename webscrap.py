@@ -29,7 +29,7 @@ driver.get(urlpage)
 # execute script to scroll down the page
 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;")
 # sleep for 30s
-time.sleep(30)
+
 # at time of publication, Nov 2018:
 # results = driver.find_elements_by_xpath("//*[@id='componentsContainer']//*[contains(@id,'listingsContainer')]//*[@class='product active']//*[@class='title productTitle']")
 # updated Nov 2019:
@@ -37,6 +37,7 @@ results = driver.find_elements_by_xpath("//*[@class=' co-product-list__main-cntr
 print('Number of results', len(results))
 data = []
 # loop over results
+time.sleep(30)
 for result in results:
     product_name = result.text
     link = result.find_element_by_tag_name('a')
