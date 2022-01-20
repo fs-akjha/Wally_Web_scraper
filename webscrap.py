@@ -20,6 +20,7 @@ import pandas as pd
 urlpage = 'https://groceries.asda.com/search/yogurt' 
 print(urlpage)
 chrome_options = Options()
+chrome_options.headless = True
 chrome_options.add_argument("--headless")
 # With headless mode
 driver = webdriver.Chrome(executable_path="./chromedriver.exe", options = chrome_options)
