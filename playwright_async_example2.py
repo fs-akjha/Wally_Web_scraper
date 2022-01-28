@@ -6,10 +6,11 @@ async def main():
         for browser_type in [p.chromium]:
             browser = await browser_type.launch(headless=True)
             page = await browser.new_page()
-            await page.goto('https://www.fleetstudio.com/')
-            all_items =await page.query_selector('div')
-            # await page.locator("button").click()
-            print(all_items.inner_text())
+            await page.goto('http://whatsmyuseragent.org/')
+            userAgentSelector = "div.user-agent"
+            elementHandle = await page.query_selector(userAgentSelector)
+            uaHtml = elementHandle.inner_text()
+            print("uaHtml=%s" % uaHtml)
             # await page.screenshot(path=f'scrapingant-{browser_type.name}.png')
             await browser.close()
 
