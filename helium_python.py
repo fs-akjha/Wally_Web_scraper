@@ -1,7 +1,6 @@
 from helium import *
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
-
 url='https://www.tesla.com'
 # url='https://quotes.toscrape.com/js/'
 browser=start_chrome(url,headless=True)
