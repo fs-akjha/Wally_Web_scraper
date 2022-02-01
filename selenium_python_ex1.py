@@ -1,17 +1,15 @@
 import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 import time
-from selenium.webdriver import Chrome
-from selenium.webdriver import ChromeOptions
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.keys import Keys
 
-
-chrome_options = ChromeOptions()
+chrome_options = Options()
 chrome_options.headless = True
 chrome_options.add_argument("--headless")
 # initiating the webdriver. Parameter includes the path of the webdriver.
-driver = webdriver.Chrome(executable_path="./chromedriver.exe", options = chrome_options) 
+driver = webdriver.Chrome(executable_path="./chromedriver.exe", options = chrome_options)  
 #url of the page we want to scrape
 url = "https://www.naukri.com/top-jobs-by-designations# desigtop600"
   
